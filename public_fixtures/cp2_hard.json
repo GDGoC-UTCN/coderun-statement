@@ -1,0 +1,478 @@
+[
+  {
+    "expected": {
+      "decisions": [
+        {
+          "authorized": true,
+          "id": "req1",
+          "reason": "OK"
+        }
+      ]
+    },
+    "id": "H2-P-GUIDE",
+    "input": {
+      "now": "2026-11-20T10:00:00Z",
+      "requests": [
+        {
+          "clearance": 5,
+          "id": "req1",
+          "region": "europe-west1",
+          "revoked": false,
+          "session_expires_at": "2026-11-20T11:00:00Z",
+          "status": "ACTIVE"
+        }
+      ],
+      "required_region": "europe-west1"
+    }
+  },
+  {
+    "expected": {
+      "decisions": [
+        {
+          "authorized": true,
+          "id": "pub-zq2z",
+          "reason": "OK"
+        },
+        {
+          "authorized": false,
+          "id": "pub-8awe",
+          "reason": "REVOKED"
+        },
+        {
+          "authorized": false,
+          "id": "pub-ix0m",
+          "reason": "INACTIVE"
+        },
+        {
+          "authorized": false,
+          "id": "pub-qg02",
+          "reason": "LOW_CLEARANCE"
+        },
+        {
+          "authorized": false,
+          "id": "pub-nr3i",
+          "reason": "REGION_MISMATCH"
+        },
+        {
+          "authorized": false,
+          "id": "pub-mnd1",
+          "reason": "SESSION_EXPIRED"
+        }
+      ]
+    },
+    "id": "H2-P-001",
+    "input": {
+      "now": "2026-11-21T14:30:00Z",
+      "requests": [
+        {
+          "clearance": 5,
+          "id": "pub-zq2z",
+          "region": "europe-west1",
+          "revoked": false,
+          "session_expires_at": "2026-11-21T15:00:00Z",
+          "status": "ACTIVE"
+        },
+        {
+          "clearance": 5,
+          "id": "pub-8awe",
+          "region": "europe-west1",
+          "revoked": true,
+          "session_expires_at": "2026-11-21T15:00:00Z",
+          "status": "ACTIVE"
+        },
+        {
+          "clearance": 5,
+          "id": "pub-ix0m",
+          "region": "europe-west1",
+          "revoked": false,
+          "session_expires_at": "2026-11-21T15:00:00Z",
+          "status": "DISABLED"
+        },
+        {
+          "clearance": 4,
+          "id": "pub-qg02",
+          "region": "europe-west1",
+          "revoked": false,
+          "session_expires_at": "2026-11-21T15:00:00Z",
+          "status": "ACTIVE"
+        },
+        {
+          "clearance": 5,
+          "id": "pub-nr3i",
+          "region": "us-central1",
+          "revoked": false,
+          "session_expires_at": "2026-11-21T15:00:00Z",
+          "status": "ACTIVE"
+        },
+        {
+          "clearance": 5,
+          "id": "pub-mnd1",
+          "region": "europe-west1",
+          "revoked": false,
+          "session_expires_at": "2026-11-21T14:10:00Z",
+          "status": "ACTIVE"
+        }
+      ],
+      "required_region": "europe-west1"
+    }
+  },
+  {
+    "expected": {
+      "decisions": [
+        {
+          "authorized": false,
+          "id": "pub-rbd6",
+          "reason": "REVOKED"
+        },
+        {
+          "authorized": false,
+          "id": "pub-2vla",
+          "reason": "INACTIVE"
+        },
+        {
+          "authorized": false,
+          "id": "pub-lg9w",
+          "reason": "LOW_CLEARANCE"
+        },
+        {
+          "authorized": false,
+          "id": "pub-jvxg",
+          "reason": "REGION_MISMATCH"
+        }
+      ]
+    },
+    "id": "H2-P-002",
+    "input": {
+      "now": "2026-11-21T14:37:00Z",
+      "requests": [
+        {
+          "clearance": 8,
+          "id": "pub-rbd6",
+          "region": "europe-west1",
+          "revoked": true,
+          "session_expires_at": "2026-11-21T15:08:00Z",
+          "status": "PENDING"
+        },
+        {
+          "clearance": 1,
+          "id": "pub-2vla",
+          "region": "europe-west1",
+          "revoked": false,
+          "session_expires_at": "2026-11-21T15:08:00Z",
+          "status": "SUSPENDED"
+        },
+        {
+          "clearance": 2,
+          "id": "pub-lg9w",
+          "region": "asia-south1",
+          "revoked": false,
+          "session_expires_at": "2026-11-21T15:08:00Z",
+          "status": "ACTIVE"
+        },
+        {
+          "clearance": 8,
+          "id": "pub-jvxg",
+          "region": "asia-south1",
+          "revoked": false,
+          "session_expires_at": "2026-11-21T14:36:00Z",
+          "status": "ACTIVE"
+        }
+      ],
+      "required_region": "europe-west1"
+    }
+  },
+  {
+    "expected": {
+      "decisions": [
+        {
+          "authorized": false,
+          "id": "pub-ptxo",
+          "reason": "INVALID_INPUT"
+        },
+        {
+          "authorized": false,
+          "id": "pub-ptxo",
+          "reason": "DUPLICATE_ID"
+        }
+      ]
+    },
+    "id": "H2-P-003",
+    "input": {
+      "now": "2026-11-21T14:44:00Z",
+      "requests": [
+        {
+          "clearance": "7",
+          "id": "pub-ptxo",
+          "region": "europe-west1",
+          "revoked": false,
+          "session_expires_at": "2026-11-21T15:16:00Z",
+          "status": "ACTIVE"
+        },
+        {
+          "clearance": 6,
+          "id": "pub-ptxo",
+          "region": "europe-west1",
+          "revoked": false,
+          "session_expires_at": "2026-11-21T15:16:00Z",
+          "status": "ACTIVE"
+        }
+      ],
+      "required_region": "europe-west1"
+    }
+  },
+  {
+    "expected": {
+      "decisions": [
+        {
+          "authorized": true,
+          "id": "pub-tcd9",
+          "reason": "OK"
+        },
+        {
+          "authorized": false,
+          "id": "pub-gj6b",
+          "reason": "DUPLICATE_ID"
+        },
+        {
+          "authorized": false,
+          "id": "pub-gj6b",
+          "reason": "DUPLICATE_ID"
+        }
+      ]
+    },
+    "id": "H2-P-004",
+    "input": {
+      "now": "2026-11-21T14:51:00Z",
+      "requests": [
+        {
+          "clearance": 9,
+          "id": "pub-tcd9",
+          "region": "europe-west1",
+          "revoked": false,
+          "session_expires_at": "2026-11-21T15:24:00Z",
+          "status": "ACTIVE"
+        },
+        {
+          "clearance": 9,
+          "id": "pub-gj6b",
+          "region": "europe-west1",
+          "revoked": true,
+          "session_expires_at": "2026-11-21T15:24:00Z",
+          "status": "ACTIVE"
+        },
+        {
+          "clearance": 9,
+          "id": "pub-gj6b",
+          "region": "europe-west1",
+          "revoked": false,
+          "session_expires_at": "2026-11-21T15:24:00Z",
+          "status": "ACTIVE"
+        }
+      ],
+      "required_region": "europe-west1"
+    }
+  },
+  {
+    "expected": {
+      "decisions": [
+        {
+          "authorized": false,
+          "id": "pub-zmae",
+          "reason": "INVALID_INPUT"
+        },
+        {
+          "authorized": false,
+          "id": "pub-1kta",
+          "reason": "INACTIVE"
+        }
+      ]
+    },
+    "id": "H2-P-005",
+    "input": {
+      "now": "2026-11-21T14:58:00Z",
+      "requests": [
+        {
+          "clearance": 7,
+          "id": "pub-zmae",
+          "region": "europe-west1",
+          "revoked": false,
+          "session_expires_at": "2026-11-21T15:32:00Z",
+          "status": "active"
+        },
+        {
+          "clearance": 7,
+          "id": "pub-1kta",
+          "region": "europe-west1",
+          "revoked": false,
+          "session_expires_at": "2026-11-21T15:32:00Z",
+          "status": "PENDING"
+        }
+      ],
+      "required_region": "europe-west1"
+    }
+  },
+  {
+    "expected": {
+      "decisions": [
+        {
+          "authorized": false,
+          "id": null,
+          "reason": "INVALID_INPUT"
+        },
+        {
+          "authorized": true,
+          "id": "pub-0aez",
+          "reason": "OK"
+        }
+      ]
+    },
+    "id": "H2-P-006",
+    "input": {
+      "now": "2026-11-21T15:05:00Z",
+      "requests": [
+        {
+          "clearance": 5,
+          "region": "europe-west1",
+          "revoked": false,
+          "session_expires_at": "2026-11-21T15:40:00Z",
+          "status": "ACTIVE"
+        },
+        {
+          "clearance": 5,
+          "id": "pub-0aez",
+          "region": "europe-west1",
+          "revoked": false,
+          "session_expires_at": "2026-11-21T15:40:00Z",
+          "status": "ACTIVE"
+        }
+      ],
+      "required_region": "europe-west1"
+    }
+  },
+  {
+    "expected": {
+      "decisions": [
+        {
+          "authorized": false,
+          "id": "pub-ffui",
+          "reason": "SESSION_EXPIRED"
+        },
+        {
+          "authorized": true,
+          "id": "pub-vobu",
+          "reason": "OK"
+        }
+      ]
+    },
+    "id": "H2-P-007",
+    "input": {
+      "now": "2026-11-21T15:12:00Z",
+      "requests": [
+        {
+          "clearance": 8,
+          "id": "pub-ffui",
+          "region": "europe-west1",
+          "revoked": false,
+          "session_expires_at": "2026-11-21T15:12:00Z",
+          "status": "ACTIVE"
+        },
+        {
+          "clearance": 8,
+          "id": "pub-vobu",
+          "region": "europe-west1",
+          "revoked": false,
+          "session_expires_at": "2026-11-21T16:27:00+01:00",
+          "status": "ACTIVE"
+        }
+      ],
+      "required_region": "europe-west1"
+    }
+  },
+  {
+    "expected": {
+      "decisions": [
+        {
+          "authorized": false,
+          "id": "pub-iigi",
+          "reason": "INVALID_INPUT"
+        }
+      ]
+    },
+    "id": "H2-P-008",
+    "input": {
+      "now": "2026-11-21T15:19:00Z",
+      "requests": [
+        {
+          "clearance": 6,
+          "id": "pub-iigi",
+          "region": "europe-west1",
+          "revoked": false,
+          "session_expires_at": "2026-11-21 15:49:00Z",
+          "status": "ACTIVE"
+        }
+      ],
+      "required_region": "europe-west1"
+    }
+  },
+  {
+    "expected": {
+      "decisions": [
+        {
+          "authorized": false,
+          "id": "pub-zxps",
+          "reason": "INVALID_INPUT"
+        },
+        {
+          "authorized": false,
+          "id": "pub-ev2b",
+          "reason": "INVALID_INPUT"
+        }
+      ]
+    },
+    "id": "H2-P-009",
+    "input": {
+      "now": "2026-11-21",
+      "requests": [
+        {
+          "clearance": 9,
+          "id": "pub-zxps",
+          "region": "europe-west1",
+          "revoked": false,
+          "session_expires_at": "2026-11-21T16:04:00Z",
+          "status": "ACTIVE"
+        },
+        {
+          "clearance": 2,
+          "id": "pub-ev2b",
+          "region": "europe-west1",
+          "revoked": false,
+          "session_expires_at": "2026-11-21T16:04:00Z",
+          "status": "ACTIVE"
+        }
+      ],
+      "required_region": "europe-west1"
+    }
+  },
+  {
+    "expected": {
+      "decisions": []
+    },
+    "id": "H2-P-010",
+    "input": {
+      "now": "2026-11-21T15:33:00Z",
+      "requests": "none",
+      "required_region": "europe-west1"
+    }
+  },
+  {
+    "expected": {
+      "decisions": []
+    },
+    "id": "H2-P-011",
+    "input": {
+      "now": "2026-11-21T15:40:00Z",
+      "requests": [],
+      "required_region": "europe-west1"
+    }
+  }
+]

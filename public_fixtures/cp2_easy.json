@@ -1,0 +1,203 @@
+[
+  {
+    "expected": {
+      "authorized": true,
+      "reason": "OK"
+    },
+    "id": "E2-P-GUIDE",
+    "input": {
+      "required_region": "europe-west1",
+      "user": {
+        "clearance": 5,
+        "region": "europe-west1",
+        "revoked": false,
+        "status": "ACTIVE"
+      }
+    }
+  },
+  {
+    "expected": {
+      "authorized": true,
+      "reason": "OK"
+    },
+    "id": "E2-P-001",
+    "input": {
+      "required_region": "europe-west2",
+      "user": {
+        "clearance": 8,
+        "region": "europe-west2",
+        "revoked": false,
+        "status": "ACTIVE"
+      }
+    }
+  },
+  {
+    "expected": {
+      "authorized": false,
+      "reason": "REVOKED"
+    },
+    "id": "E2-P-002",
+    "input": {
+      "required_region": "asia-northeast1",
+      "user": {
+        "clearance": 6,
+        "region": "asia-northeast1",
+        "revoked": true,
+        "status": "ACTIVE"
+      }
+    }
+  },
+  {
+    "expected": {
+      "authorized": false,
+      "reason": "INACTIVE"
+    },
+    "id": "E2-P-003",
+    "input": {
+      "required_region": "europe-west9",
+      "user": {
+        "clearance": 7,
+        "region": "europe-west9",
+        "revoked": false,
+        "status": "PENDING"
+      }
+    }
+  },
+  {
+    "expected": {
+      "authorized": false,
+      "reason": "LOW_CLEARANCE"
+    },
+    "id": "E2-P-004",
+    "input": {
+      "required_region": "europe-west2",
+      "user": {
+        "clearance": 2,
+        "region": "europe-west2",
+        "revoked": false,
+        "status": "ACTIVE"
+      }
+    }
+  },
+  {
+    "expected": {
+      "authorized": false,
+      "reason": "REGION_MISMATCH"
+    },
+    "id": "E2-P-005",
+    "input": {
+      "required_region": "asia-northeast1",
+      "user": {
+        "clearance": 6,
+        "region": "southamerica-east1",
+        "revoked": false,
+        "status": "ACTIVE"
+      }
+    }
+  },
+  {
+    "expected": {
+      "authorized": false,
+      "reason": "REVOKED"
+    },
+    "id": "E2-P-006",
+    "input": {
+      "required_region": "europe-west9",
+      "user": {
+        "clearance": 7,
+        "region": "europe-west9",
+        "revoked": true,
+        "status": "SUSPENDED"
+      }
+    }
+  },
+  {
+    "expected": {
+      "authorized": false,
+      "reason": "INACTIVE"
+    },
+    "id": "E2-P-007",
+    "input": {
+      "required_region": "europe-west2",
+      "user": {
+        "clearance": 3,
+        "region": "europe-west2",
+        "revoked": false,
+        "status": "DISABLED"
+      }
+    }
+  },
+  {
+    "expected": {
+      "authorized": false,
+      "reason": "LOW_CLEARANCE"
+    },
+    "id": "E2-P-008",
+    "input": {
+      "required_region": "asia-northeast1",
+      "user": {
+        "clearance": 4,
+        "region": "southamerica-east1",
+        "revoked": false,
+        "status": "ACTIVE"
+      }
+    }
+  },
+  {
+    "expected": {
+      "authorized": false,
+      "reason": "INVALID_INPUT"
+    },
+    "id": "E2-P-009",
+    "input": {
+      "required_region": "europe-west9",
+      "user": {
+        "clearance": "8",
+        "region": "europe-west9",
+        "revoked": true,
+        "status": "ACTIVE"
+      }
+    }
+  },
+  {
+    "expected": {
+      "authorized": false,
+      "reason": "INVALID_INPUT"
+    },
+    "id": "E2-P-010",
+    "input": {
+      "required_region": "europe-west2",
+      "user": {
+        "clearance": 5,
+        "region": "europe-west2",
+        "revoked": "no",
+        "status": "ACTIVE"
+      }
+    }
+  },
+  {
+    "expected": {
+      "authorized": false,
+      "reason": "INVALID_INPUT"
+    },
+    "id": "E2-P-011",
+    "input": {
+      "required_region": "asia-northeast1"
+    }
+  },
+  {
+    "expected": {
+      "authorized": false,
+      "reason": "INVALID_INPUT"
+    },
+    "id": "E2-P-012",
+    "input": {
+      "user": {
+        "clearance": 7,
+        "region": "europe-west9",
+        "revoked": false,
+        "status": "ACTIVE"
+      }
+    }
+  }
+]
